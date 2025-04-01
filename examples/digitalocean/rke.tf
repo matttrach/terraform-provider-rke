@@ -5,7 +5,7 @@ variable "do_token" {
 }
 
 module "nodes" {
-  source = "./do"
+  source   = "./do"
   do_token = var.do_token
   # region       = "nyc1"
   # droplet_size = "t2.micro"
@@ -45,13 +45,13 @@ resource "rke_cluster" "cluster" {
     kube_api {
       extra_args = {
         kubelet-preferred-address-types = "InternalIP,ExternalIP,Hostname"
-        feature-gates = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true"
+        feature-gates                   = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true"
       }
     }
     kubelet {
       extra_args = {
         cloud-provider = "external"
-        feature-gates = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true"
+        feature-gates  = "VolumeSnapshotDataSource=true,KubeletPluginsWatcher=true,CSINodeInfo=true,CSIDriverRegistry=true"
       }
     }
   }
@@ -59,9 +59,9 @@ resource "rke_cluster" "cluster" {
   ingress {
     provider = "none"
   }
-  
+
   addon_job_timeout = 60
-  addons = "${data.template_file.addons.rendered}"
+  addons            = data.template_file.addons.rendered
 
   addons_include = [
     # Cloud Controller Manager for DigitalOcean

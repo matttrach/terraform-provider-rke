@@ -11,32 +11,32 @@ resource "rke_cluster" "cluster" {
   }
 
   nodes {
-    address = module.nodes.addresses[0]
+    address          = module.nodes.addresses[0]
     internal_address = module.nodes.internal_ips[0]
-    user    = module.nodes.ssh_username
-    ssh_key = module.nodes.private_key
-    role    = ["controlplane", "etcd"]
+    user             = module.nodes.ssh_username
+    ssh_key          = module.nodes.private_key
+    role             = ["controlplane", "etcd"]
   }
   nodes {
-    address = module.nodes.addresses[1]
+    address          = module.nodes.addresses[1]
     internal_address = module.nodes.internal_ips[1]
-    user    = module.nodes.ssh_username
-    ssh_key = module.nodes.private_key
-    role    = ["worker"]
+    user             = module.nodes.ssh_username
+    ssh_key          = module.nodes.private_key
+    role             = ["worker"]
   }
   nodes {
-    address = module.nodes.addresses[2]
+    address          = module.nodes.addresses[2]
     internal_address = module.nodes.internal_ips[2]
-    user    = module.nodes.ssh_username
-    ssh_key = module.nodes.private_key
-    role    = ["worker"]
+    user             = module.nodes.ssh_username
+    ssh_key          = module.nodes.private_key
+    role             = ["worker"]
   }
   nodes {
-    address = module.nodes.addresses[3]
+    address          = module.nodes.addresses[3]
     internal_address = module.nodes.internal_ips[3]
-    user    = module.nodes.ssh_username
-    ssh_key = module.nodes.private_key
-    role    = ["worker"]
+    user             = module.nodes.ssh_username
+    ssh_key          = module.nodes.private_key
+    role             = ["worker"]
   }
 }
 

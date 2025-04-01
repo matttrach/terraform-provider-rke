@@ -1,24 +1,24 @@
-resource rke_cluster "cluster" {
+resource "rke_cluster" "cluster" {
   nodes {
-    address = "192.2.0.1"
+    address          = "192.2.0.1"
     internal_address = "192.2.0.1"
-    user    = "rancher"
-    role    = ["controlplane", "worker", "etcd"]
-    ssh_key = file("~/.ssh/id_rsa")
+    user             = "rancher"
+    role             = ["controlplane", "worker", "etcd"]
+    ssh_key          = file("~/.ssh/id_rsa")
   }
   nodes {
-    address = "192.2.0.2"
+    address          = "192.2.0.2"
     internal_address = "192.2.0.2"
-    user    = "rancher"
-    role    = ["controlplane", "worker", "etcd"]
-    ssh_key = file("~/.ssh/id_rsa")
+    user             = "rancher"
+    role             = ["controlplane", "worker", "etcd"]
+    ssh_key          = file("~/.ssh/id_rsa")
   }
   nodes {
-    address = "15.188.119.237"
+    address          = "15.188.119.237"
     internal_address = "172.31.46.40"
-    user    = "rancher"
-    role    = ["controlplane", "worker", "etcd"]
-    ssh_key = file("~/.ssh/id_rsa")
+    user             = "rancher"
+    role             = ["controlplane", "worker", "etcd"]
+    ssh_key          = file("~/.ssh/id_rsa")
   }
 }
 

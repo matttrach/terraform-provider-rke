@@ -17,10 +17,10 @@ EOF
 
 # Step 2: Add our Access Policy
 resource "aws_iam_role_policy" "rke-access-policy" {
-name = "rke-access-policy"
-role = aws_iam_role.rke-role.id
+  name = "rke-access-policy"
+  role = aws_iam_role.rke-role.id
 
-policy = <<EOF
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [

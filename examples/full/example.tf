@@ -273,34 +273,34 @@ spec:
 EOL
 
 
-    addons_include = [
-      "https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/rook-operator.yaml",
-      "https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/rook-cluster.yaml",
-      "/path/to/manifest",
-    ]
-  }
+  addons_include = [
+    "https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/rook-operator.yaml",
+    "https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/rook-cluster.yaml",
+    "/path/to/manifest",
+  ]
+}
 
-  ###############################################################################
-  # If you need kubeconfig.yml for using kubectl, please uncomment follows.
-  ###############################################################################
-  #resource "local_file" "kube_cluster_yaml" {
-  #  filename = "${path.root}/kube_config_cluster.yml"
-  #  content  = rke_cluster.cluster.kube_config_yaml
-  #}
-  ###############################################################################
-  # If you need ca_crt/client_cert/client_key, please uncomment follows.
-  ###############################################################################
-  #resource "local_file" "ca_crt" {
-  #  filename = "${path.root}/ca_cert"
-  #  content  = rke_cluster.cluster.ca_crt
-  #}
-  #
-  #resource "local_file" "client_cert" {
-  #  filename = "${path.root}/client_cert"
-  #  content  = rke_cluster.cluster.client_cert
-  #}
-  #
-  #resource "local_file" "client_key" {
-  #  filename = "${path.root}/client_key"
-  #  content  = rke_cluster.cluster.client_key
-  #}
+###############################################################################
+# If you need kubeconfig.yml for using kubectl, please uncomment follows.
+###############################################################################
+#resource "local_file" "kube_cluster_yaml" {
+#  filename = "${path.root}/kube_config_cluster.yml"
+#  content  = rke_cluster.cluster.kube_config_yaml
+#}
+###############################################################################
+# If you need ca_crt/client_cert/client_key, please uncomment follows.
+###############################################################################
+#resource "local_file" "ca_crt" {
+#  filename = "${path.root}/ca_cert"
+#  content  = rke_cluster.cluster.ca_crt
+#}
+#
+#resource "local_file" "client_cert" {
+#  filename = "${path.root}/client_cert"
+#  content  = rke_cluster.cluster.client_cert
+#}
+#
+#resource "local_file" "client_key" {
+#  filename = "${path.root}/client_key"
+#  content  = rke_cluster.cluster.client_key
+#}
